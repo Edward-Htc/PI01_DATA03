@@ -1,6 +1,5 @@
 from peewee import *
 
-from peewee import *
 database = MySQLDatabase('proyecti_henry', **{'charset': 'utf8', 'sql_mode': 'PIPES_AS_CONCAT', 'use_unicode': True, 'port': 3306, 'user': 'root', 'password': '2398'})
 
 class UnknownField(object):
@@ -48,30 +47,30 @@ class Drivers(BaseModel):
     class Meta:
         table_name = 'drivers'
 
+class Races(BaseModel):
+    circuit = ForeignKeyField(column_name='CircuitId', field='circuit_id', model=Circuits, null=True)#
+    date = CharField(column_name='Date', null=True)#
+    name = CharField(column_name='Name', null=True)#
+    race_id = AutoField(column_name='RaceId')#
+    round = IntegerField(column_name='Round', null=True)#
+    time = CharField(column_name='Time', null=True)#
+    url = CharField(column_name='Url', null=True)#
+    year = IntegerField(column_name='Year', null=True)#
+
+    class Meta:
+        table_name = 'races'
+
 class LapTimes(BaseModel):
-    col_1 = IntegerField(column_name='Col_1', null=True)
-    col_2 = IntegerField(column_name='Col_2', null=True)
-    col_3 = IntegerField(column_name='Col_3', null=True)
-    col_4 = IntegerField(column_name='Col_4', null=True)
-    col_5 = IntegerField(column_name='Col_5', null=True)
-    col_6 = IntegerField(column_name='Col_6', null=True)
+    driver = ForeignKeyField(column_name='driverId', field='driver_id', model=Drivers, null=True)
+    lap = IntegerField(column_name='lap', null=True)
+    milliseconds = IntegerField(column_name='milliseconds', null=True)
+    position = IntegerField(column_name='position', null=True)
+    race = ForeignKeyField(column_name='raceId', field='race_id', model=Races, null=True)
+    time = IntegerField(column_name='time', null=True)
 
     class Meta:
         table_name = 'lap_times'
         primary_key = False
-
-class Races(BaseModel):
-    circuit = ForeignKeyField(column_name='CircuitId', field='circuit_id', model=Circuits, null=True)
-    date = CharField(column_name='Date', null=True)
-    name = CharField(column_name='Name', null=True)
-    race_id = AutoField(column_name='RaceId')
-    round = IntegerField(column_name='Round', null=True)
-    time = CharField(column_name='Time', null=True)
-    url = CharField(column_name='Url', null=True)
-    year = IntegerField(column_name='Year', null=True)
-
-    class Meta:
-        table_name = 'races'
 
 class PitStops(BaseModel):
     driver = ForeignKeyField(column_name='DriverId', field='driver_id', model=Drivers, null=True)
