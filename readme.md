@@ -1,4 +1,4 @@
-# PI01_DATA03 -- Huatcaya Tacas Edward
+# PI01_DATA03 -- Huarcaya Tacas Edward
 <img src='./img/Flujo.png'> </br>
 
 ## Objetivo
