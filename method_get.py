@@ -12,7 +12,6 @@ def shutdown():
     if not database.is_closed():
         database.close()
 
-
 @app.get("/")
 async def getMain():
     return ['/race','/qualifying','/circuits','/results','/constructors','/drivers','/lapTimes','/pitStops']
