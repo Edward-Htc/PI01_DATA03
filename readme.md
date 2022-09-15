@@ -1,6 +1,10 @@
 # PI01_DATA03 -- Huarcaya Tacas Edward
+### Flujo del proceso de limpieza y creacion de la API
+
 <img src='./img/Flujo.png'> </br>
 
+## URL-Video
+https://youtu.be/IvJY9dhEp4g
 ## Objetivo
 Extraer la data para su posterior limpieza y normalizacion, luego mandarlo a mysql y de ahi a una API para un uso a futuro.
 
