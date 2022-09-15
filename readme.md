@@ -30,4 +30,6 @@ Extraer la data para su posterior limpieza y normalizacion, luego mandarlo a mys
 ## Archivos otros
 * Tanto **Procfile** como **requeriments.txt** fueron creados para que **Heroku** pueda desplegar la API
 
+### Visualizacion de las realaciones SQL
+<img src='./img/ER.png'> </br>
 
