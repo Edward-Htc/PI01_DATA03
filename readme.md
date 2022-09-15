@@ -37,3 +37,31 @@ Extraer la data para su posterior limpieza y normalizacion, luego mandarlo a mys
 ### Visualizacion de las realaciones SQL
 <img src='./img/ER.png'> </br>
 
+## Ejercicios
+Los ejercicios a continuacion los resolvi con pandas y con sql(Solo para comprobar), la solucion en pandas se encuentra en la carpeta **ConsumirAPI** </br>
+####  1. Año con mas carreras
+```SQL
+select round,Year from races order by Round desc limit 1;
+-- 2021
+```
+####  2. Piloto con mayor cantidad de primeros puestos
+```SQL
+select DriverId, count(PositionOrder) as cantidad from (select * from results where PositionOrder=1) Tabla 
+group by DriverId order by cantidad ;
+select * from drivers where DriverID = 1;
+--Lewis Hamilton
+```
+####  3. Nombre del circuito mas recorrido
+```SQL
+select CircuitId,Round from races order by Round desc limit 1; -- 24
+select * from circuits where CircuitID=24;
+--Yas Marina Circuit
+```
+####  4. Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad American o British
+```SQL
+select DriverId,sum(Points) as puntaje from results where ConstructorId 
+in (SELECT ConstructorId FROM proyecti_henry.constructors where Nationality in('American','British')) group by DriverId
+order by puntaje desc; -- 18
+select * from drivers where DriverID=18
+--Jenson Button
+``` 
