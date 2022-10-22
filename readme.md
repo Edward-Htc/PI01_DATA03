@@ -3,14 +3,8 @@
 
 <img src='./img/Flujo.png'> </br>
 
-## URL-Video
-https://youtu.be/IvJY9dhEp4g
 ## Objetivo
 Extraer la data para su posterior limpieza y normalizacion, luego mandarlo a mysql y de ahi a una API para un uso a futuro.
-
-## Limitaciones
-* La herramienta **Heroku** me arroja algunos errores que por mas que busco no encuentro, por eso mi proyecto individual es una simulacion como si la API estuviera levantada y lista para su consumo.</br>
-<img src='./img/Prueba.png'> </br>
 
 ## Herramientas usadas
 * Pandas
